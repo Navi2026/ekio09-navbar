@@ -13,7 +13,7 @@ import { FiUpload, FiDownload } from "react-icons/fi";
 // import file6png from "../../../assets/pdficon/Red02.png";
 import pdflogo from "../../../assets/icons/eikomp_logo.png";
 import StatusBar from "../../../Statusbar";
-import Chatbot from "../../../Chatbot/Chatbot";
+// import Chatbot from "../../../Chatbot/Chatbot";
 import WPCLabTesting from "../WPCRequsttesting";
 // import TECDownloadDoc from "../../TEC/TECDownloadDoc";
 import WPCSteps from "../WPCSteps";

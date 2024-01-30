@@ -10,7 +10,7 @@ import { FcDocument } from "react-icons/fc";
 import { FiUpload, FiDownload } from "react-icons/fi";
 import pdflogo from "../../../assets/icons/eikomp_logo.png";
 import StatusBar from "../../../Statusbar";
-import Chatbot from "../../../Chatbot/Chatbot";
+// import Chatbot from "../../../Chatbot/Chatbot";
 import WPCLabTesting from "../WPCRequsttesting";
 // import TECDownloadDoc from "../../TEC/TECDownloadDoc";
 import WPCSteps from "../WPCSteps";

@@ -33,7 +33,7 @@ export default function RenewalTable(){
 
       populatedata();
 
-    }, [])
+    }, [idel])
 
 
 

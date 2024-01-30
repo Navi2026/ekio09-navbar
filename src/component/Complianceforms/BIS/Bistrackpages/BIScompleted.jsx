@@ -14,16 +14,16 @@ import { FiUpload, FiDownload } from "react-icons/fi";
 // import file6png from "../../../assets/pdficon/Red02.png";
 import pdflogo from "../../../assets/icons/eikomp_logo.png"
 import StatusBar from "../../../Statusbar";
-import BISChatbot from "../../../Chatbot/BISChatbot";
+// import BISChatbot from "../../../Chatbot/BISChatbot";
 import BISSteps from "../BISSteps";
-import RenewalTable from "../RenewalTable/RenewalTable";
+// import RenewalTable from "../RenewalTable/RenewalTable";
 
 
 
 
 function Completed() {
   const [docStatus, setDocStatus] = useState({});
-  const [tableData, setTableData] = useState([]);
+  // const [tableData, setTableData] = useState([]);
 
   //const [startDate, setStartDate] = useState('');
   const [uniqueid, setUniqueid] = useState("");
@@ -63,7 +63,7 @@ function Completed() {
       .then(response => {
         const data = response.data.data;
         console.log(data.uniqueid,data.application_name);
-        setTableData(data);
+        // setTableData(data);
         const compliance_id = data["compliance"];
         const application_id = data["application"];
         const request_for = data["request_for"];
@@ -242,7 +242,7 @@ logoImg.onload = function () {
       }
     };
 
-    const myArray = Object.values(tableData);
+    // const myArray = Object.values(tableData);
 
    
     return (
@@ -454,7 +454,7 @@ logoImg.onload = function () {
 
 
 {/* renewalTable component */}
-          <RenewalTable/>
+          {/* <RenewalTable/> */}
 <br/>
 <br/>
 {/* <div className="table-wrapper">
