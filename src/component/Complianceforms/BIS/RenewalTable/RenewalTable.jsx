@@ -11,24 +11,42 @@ function formatDate(dateString) {
 
 export default function RenewalTable() {
   const [tableData, setTableData] = useState([]);
-  const idel = localStorage.getItem('ide');
 
   useEffect(() => {
     async function populateData() {
       try {
-        const response = await axiosInstance.get(`application/compliance/${idel}/`);
-        const data = response.data.data;
-        console.log(data.uniqueid, data.application_name);
-        console.log(data);
-        setTableData([data]); // Assuming data is an object, wrap it in an array
+        let idelList = JSON.parse(localStorage.getItem('allIds')) || [];
+        console.log("Idel List:", idelList); // Debug: Check the idelList
+  
+        // Ensure idelList is always an array
+        if (!Array.isArray(idelList)) {
+          idelList = [idelList]; // Convert to an array if it's not
+        }
+  
+        if (idelList.length === 0) {
+          console.warn("No idel data found in localStorage");
+          return;
+        }
+  
+        // Using Promise.all to handle multiple requests
+        const requests = idelList.map(idel =>
+          axiosInstance.get(`application/compliance/${idel}/`)
+        );
+  
+        // Waiting for all requests to complete
+        const responses = await Promise.all(requests);
+        const allData = responses.map(response => response.data.data);
+  
+        console.log("All Data Collected:", allData); // Debug: Check the collected data
+        setTableData(allData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     }
-
+  
     populateData();
-
-  }, [idel]);
+  }, []);
+  
 
   return (
     <>

@@ -59,9 +59,21 @@ function BISTableReview() {
     axiosInstance
       .get(`application/compliance/`)
       .then((response) => {
-        const tableData = response.data.data;
+        const tableData = response.data.data
         setTableData(tableData);
         setIsLoading(false); // Set loading to false after data is fetched
+        
+        // Assuming response.data.data is an array of objects as shown in your example
+const responseData = response.data.data;
+
+// Extracting all 'id' values from the responseData array
+const allIds = responseData.map(item => item.id);
+
+// Now allIds is an array of id values
+console.log(allIds);
+
+// Store allIds in localStorage
+localStorage.setItem('allIds', JSON.stringify(allIds));
       })
       .catch((error) => {
         console.log(error);
@@ -368,7 +380,8 @@ function BISTableReview() {
                   return true;
                 })
                 .map((data, index) => (
-                  <tr key={data.id}>
+                  <tr key={data.id}
+                  >
                     <td style={{ cursor: "default" }}>{index + 1}</td>
                     <td
                       className="clickable1"
