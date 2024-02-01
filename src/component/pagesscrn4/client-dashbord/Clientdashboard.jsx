@@ -9,7 +9,7 @@ import Thumb4png from "../../assets/images/lab.png";
 import Thumb5png from "../../assets/images/dash.png";
 import { ReactComponent as Mapbg } from "../../assets/client-map.svg";
 import axiosInstance from "../../../interceptors/axios";
-import Onboarding from "../../Onboarding/Onboarding";
+// import Onboarding from "../../Onboarding/Onboarding";
 // import MainChatbot from "../../Chatbot/MainChatbot";
 import LabTestBtnDash from "../LabTestDash/LabTestBtnDash";
 import Know from "../../assets/login-page-icons/1.png";
@@ -121,7 +121,7 @@ const ClientDashboard = () => {
         </Popup>
 
       </div>
-      <Onboarding />
+      {/* <Onboarding /> */}
       {/* <MainChatbot /> */}
       
       <Popup trigger={notificationIcon} setTrigger={setNotificationIcon}>

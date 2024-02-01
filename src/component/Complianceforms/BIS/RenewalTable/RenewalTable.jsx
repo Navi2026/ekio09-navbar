@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import axiosInstance from "../../../../interceptors/axios";
 
 function formatDate(dateString) {
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const date = new Date(dateString);
   const day = date.getDate().toString().padStart(2, "0");
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const year = date.getFullYear().toString().slice(-2);
-  return `${day}/${month}/${year}`;
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+  return `${day}-${month}-${year}`;
 }
 
 export default function RenewalTable() {
@@ -91,7 +92,7 @@ export default function RenewalTable() {
                 <td className="clickable1">{rowData.unique_number}</td>
                 <td className="clickable1">{formatDate(rowData.startdate)}</td>
                 <td style={{ cursor: "default" }}>{rowData.compliance_name}</td>
-                <td style={{ cursor: "default" }}>{rowData.certificate_expiry}</td>
+                <td style={{ cursor: "default" }}>{formatDate(rowData.certificate_expiry)}</td>
               </tr>
             ))}
           </tbody>

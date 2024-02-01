@@ -90,16 +90,16 @@ function Login() {
         console.log(userType);
         console.log(res.data.refresh);
 
-        if (res.data.profile.first_time === true) {
-          axios
-            .patch(`https://backend.eikompapp.com/user/${res.data.profile.id}/`, { first_time: false })
-            .then((patchRes) => {
-              console.log(patchRes);
-            })
-            .catch((patchError) => {
-              // console.error(patchError);
-            });
-        }
+        // if (res.data.profile.first_time === true) {
+        //   axios
+        //     .patch(`https://backend.eikompapp.com/user/${res.data.profile.id}/`, { first_time: false })
+        //     .then((patchRes) => {
+        //       console.log(patchRes);
+        //     })
+        //     .catch((patchError) => {
+        //       // console.error(patchError);
+        //     });
+        // }
 
         if (user_type === "corporate") {
           history.push("/navbar/clientdashboard");
