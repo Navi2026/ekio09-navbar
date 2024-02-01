@@ -70,9 +70,9 @@ export default function RenewalTable() {
               <th className="header" style={{ cursor: "default" }}>
                 Registration Number
               </th>
-              <th className="header" style={{ cursor: "default" }}>
+              {/* <th className="header" style={{ cursor: "default" }}>
                 Date of Registration
-              </th>
+              </th> */}
               <th className="header" style={{ cursor: "default" }}>
                 Compliance Name
               </th>
@@ -90,7 +90,7 @@ export default function RenewalTable() {
                 <td style={{ cursor: "default" }}>{rowData.application_name}</td>
                 <td style={{ cursor: "default" }}>{rowData.fields?.Brand_trademark}</td>
                 <td className="clickable1">{rowData.unique_number}</td>
-                <td className="clickable1">{formatDate(rowData.startdate)}</td>
+                {/* <td className="clickable1">{formatDate(rowData.startdate)}</td> */}
                 <td style={{ cursor: "default" }}>{rowData.compliance_name}</td>
                 <td style={{ cursor: "default" }}>{formatDate(rowData.certificate_expiry)}</td>
               </tr>
